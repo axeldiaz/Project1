@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="calendarDemoApp" id="top">
+<head>
+    <title>AngularUI Calendar for AngularJS</title>
+    <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" href="../bower_components/bootstrap-css/css/bootstrap.css" />
+    <link rel="stylesheet" href="../bower_components/fullcalendar/dist/fullcalendar.css">
+    <link rel="stylesheet" href="calendarDemo.css" />
+
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.0.js"></script>
+    <script src="../bower_components/moment/moment.js"></script>
+    <script src="../bower_components/fullcalendar/dist/fullcalendar.js"></script>
+    <script src="../bower_components/fullcalendar/dist/gcal.js"></script>
+    <script src="../Controllers/calendar.js"></script>
+    <script src="calendarDemo.js"></script>
+</head>
+<body data-spy="scroll">
+
+
+<div role="main">
+    <div class="container">
+        <section id="directives-calendar" ng-controller="CalendarCtrl">
+
+            <div class="well" select="renderCalender('myCalendar2');">
+                <div class="alert-success calAlert" ng-show="alertMessage != undefined && alertMessage != ''">
+
+                </div>
+                <div class="btn-toolbar">
+                    <p class="pull-right lead">Calendar Two View Options</p>
+                    <div class="btn-group">
+                        <button class="btn btn-success" ng-click="changeView('agendaDay', 'myCalendar2')">AgendaDay</button>
+                        <button class="btn btn-success" ng-click="changeView('agendaWeek', 'myCalendar2')">AgendaWeek</button>
+                        <button class="btn btn-success" ng-click="changeView('month', 'myCalendar2')">Month</button>
+                    </div>
+                </div>
+                <div class="calendar" ng-model="eventSources" calendar="myCalendar2" ui-calendar="uiConfig.calendar"></div>
+            </div>
+        </section>
+    </div>
+</div>
+
+
+
+</body>
+</html>
